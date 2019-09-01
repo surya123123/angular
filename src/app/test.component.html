@@ -1,0 +1,80 @@
+
+
+    <h1>welcome {{name}}</h1>
+    <button (click)="fireEvent()">send event</button>
+    <h2>{{name | lowercase}}</h2>
+    <h2>{{name | uppercase}}</h2>
+    <h2>{{message | titlecase}}</h2>
+    <h2>{{message | slice:3:10}}</h2>
+    <h2>{{person | json}}</h2>
+    <h2>{{date}}</h2>
+    <h2>{{date | date:'short'}}</h2>
+    <h2>{{date | date:'shortDate'}}</h2>
+    <h2>{{date | date:'shortTime'}}</h2>
+    <h2>employees list</h2>
+    <div class="margin">
+    <ul *ngFor="let employee of employees">
+        <li> {{employee.username}}</li>
+    </ul>
+    </div>
+   <h2>employees details</h2>
+    <div class="margin">
+    <ul *ngFor="let employee of employees">
+        <li>{{employee.categorie}}. {{employee.username}}-{{employee.password}}</li>
+    </ul>
+    </div>
+
+    
+    <div class="margin"> 
+    <button (click)="onClick()">greet</button>
+    {{greeting}}
+    </div>
+    <div class="margin">
+    <button (click)="greeting1='welcome to suryaraogi'">greetgi</button>
+    {{greeting1}}
+    </div>
+    <div class="margin">
+    <input #myInput type="text">
+    
+    <button (click)="logMessage(myInput.value)">log</button>
+    </div>
+    <div class="margin">
+    <input [(ngModel)]="name1" type="text">
+    {{name1}}
+    </div>
+    <h1 *ngIf="true;then  thenBlock; else elseBlock">hello reddy</h1>
+    <ng-template #thenBlock>
+        <h2>name is surya</h2>
+   </ng-template>
+    <ng-template #elseBlock>
+         <h2>name is hidden</h2>
+    </ng-template>
+    <div  [ngSwitch]="color">
+        <div class="text-danger" *ngSwitchCase="'red'">you picked red color</div>
+        <div class="text-special" *ngSwitchCase="'blue'">you picked blue color</div>
+        <div class="margin" *ngSwitchCase="'green'">you picked green color</div>
+        <div *ngSwitchDefault>pick again</div>
+
+    </div>
+    <div class="text-special" *ngFor="let color of colors">
+        <h4>{{color}}</h4>
+    </div>
+    <h2>{{"hi "+parentData}}</h2>
+   
+    <h2 class="text-special">{{greet()}}</h2>
+    <h2 class="text-danger">{{siteUrl}}</h2>
+    <h1>{{name.length}}</h1>
+    <h3 class="text-success">{{name.toUpperCase()}}</h3>
+    <h3 class="text-special">{{name.toUpperCase()}}</h3>
+    <h3  [class]="successClass">{{name.toUpperCase()}}</h3>
+    <h3 [class.text-danger]="true">{{name.toUpperCase()}}</h3>
+    <h2 [ngClass]="messageClasses">{{name.toUpperCase()}}</h2>
+    <h2 [style.color]="'orange'">style binding</h2>
+    <h2 [style.color]="hasError ?'red' : 'green'">style binding</h2>
+    <h2 [style.color]="highlightColor">style binding</h2>
+    <h2 [ngStyle]="titleStyles">style binding</h2>
+    <input  [disabled]="false" type="text" value="surya rao">
+
+    <input [disabled]="true"  type="text" value="surya rao">
+
+

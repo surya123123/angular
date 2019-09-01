@@ -1,0 +1,31 @@
+h1{
+    color:blue;
+    text-align: left
+ }
+ h2{
+    color:yellowgreen;
+    text-align: left
+ }
+
+
+ .text-success{
+     color: blueviolet;
+     text-align: start
+     
+ }
+ .text-danger{
+     color:red;
+     text-align: left
+ }
+ .text-special{
+     font-style:italic;
+     color:blue;
+     text-align: left
+ }
+ .margin{
+     color: green;
+     text-align: left;
+     margin: 5px
+     
+     
+ }
